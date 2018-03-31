@@ -1,6 +1,6 @@
 import { createStore, applyMiddleware, combineReducers } from 'redux'
 import { libreria } from './src/reducers/libreria'
-import { historia } from './src/reducers/historia' 
+import { historia } from './src/reducers/historia'
 
 import { crearLibro, borrarLibro } from './src/actions/libreria'
 
@@ -12,7 +12,7 @@ const reducer = combineReducers({
   libreria
 })
 
-const store = createStore(reducer, applyMiddleware(logger, historiaMiddleware))
+const store = createStore(reducer, applyMiddleware(logger, historiaMiddleware()))
 
 // subscribe
 let libros;

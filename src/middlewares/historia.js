@@ -6,14 +6,14 @@ const extraerEstado = state => {
   return resto
 }
 
-const historia = store => next => action => {
+const historia = timestampCreator => store => next => action => {
   const antes = extraerEstado(store.getState())
 
   const r = next(action)
 
   const despues = extraerEstado(store.getState())
 
-  next(registrarAccion(action, antes, despues))
+  next(registrarAccion(action, antes, despues, timestampCreator))
   return r
 }
 
